@@ -27,16 +27,7 @@
         padding: 5px;
     }
     
-    .productos {
-        background-color: rgba(50, 13, 85, 0.336);
-        padding: 10px;
-        
-        p {
-            font-weight: bold;
-            text-decoration: underline;
-
-        }
-    }
+    
     
     .pedidos {
         background-color: rgba(18, 136, 91, 0.411);
@@ -98,3 +89,46 @@
     .container {
         align-items: center !important;
     }
+
+    .social {
+        font-size: larger;
+    }
+
+    $redes: (
+        twitter: #0ea3e9d0,
+        facebook: #1e1eec,
+        instagram: #e932dab0,
+    );
+    @each $red, $color in $redes {
+
+        .red-#{$red} {
+            color: $color;
+            @extend .social;
+        }
+    }
+
+    .social {
+        font-size: larger;
+    }
+
+    @mixin tamaño {
+        height: 32px;
+        width: 100%;
+        margin: 32px 8px;
+        text-align: center;
+        font-size: 24px;
+        
+    }
+    .productos {
+        background-color: rgba(50, 13, 85, 0.336);
+        padding: 10px;
+        
+        p {
+            font-weight: bold;
+            text-decoration: underline;
+            @include tamaño;
+
+        }
+    }
+
+    
